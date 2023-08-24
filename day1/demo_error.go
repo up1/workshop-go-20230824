@@ -1,12 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"errors"
 	"log/slog"
 )
 
+var doSthError = errors.New("doSth Exception xxx")
+
 func doSth() (string, error) {
-	return "OK", fmt.Errorf("doSth Exception xxx")
+	return "OK", doSthError
 }
 
 func main() {
