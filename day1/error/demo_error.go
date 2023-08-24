@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"log/slog"
 )
 
 var doSthError = errors.New("doSth Exception xxx")
@@ -23,8 +22,10 @@ func doSth() (string, error) {
 }
 
 func main() {
-	_, err := doSth()
-	if err != nil {
-		slog.Info(err.Error()) // Go 1.21
-	}
+	doSth()
+	// r, err := doSth()
+	// if err != nil {
+	// 	slog.Info(err.Error()) // Go 1.21
+	// }
+	// println(r)
 }
