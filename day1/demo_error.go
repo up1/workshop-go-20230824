@@ -2,13 +2,24 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"log/slog"
 )
 
 var doSthError = errors.New("doSth Exception xxx")
 
+type MyErrorWithDoSth struct {
+	Code    int
+	Message string
+}
+
+func (e MyErrorWithDoSth) Error() string {
+	return fmt.Sprintf("Code=%v, Message=%v", e.Code, e.Message)
+}
+
 func doSth() (string, error) {
-	return "OK", doSthError
+	err := MyErrorWithDoSth{Code: 75000, Message: "Error na ja"}
+	return "OK", err
 }
 
 func main() {
