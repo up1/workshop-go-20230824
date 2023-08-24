@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+func sayHi(name string) string {
+	return "Hello " + name
+}
 
 func main() {
-	fmt.Println("Hello world")
-	println("Hello world")
+	message := sayHi("somkiat")
+	println(message)
 }
