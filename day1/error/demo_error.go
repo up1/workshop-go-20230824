@@ -23,7 +23,6 @@ func doSth() (string, error) {
 
 func main() {
 	doSth()
-	// r, err := doSth()
 	// if err != nil {
 	// 	slog.Info(err.Error()) // Go 1.21
 	// }
