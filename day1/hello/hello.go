@@ -1,5 +1,5 @@
 package hello
 
-func SayHi() {
-	println("Hello")
+func SayHi() string {
+	return "Hello"
 }
