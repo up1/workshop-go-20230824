@@ -10,7 +10,7 @@ type Employee struct {
 
 // Receiver
 // 1. Value Receiver
-// 2. Point Receiver
+// 2. Pointer Receiver
 func (e *Employee) leave() bool {
 	e.Name = "Update somkiat"
 	return true
