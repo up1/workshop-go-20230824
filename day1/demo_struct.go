@@ -7,6 +7,10 @@ type Employee struct {
 	Name string
 	Age  int
 }
+type EmployeeWithEmail struct {
+	Employee
+	Email string
+}
 
 // Receiver
 // 1. Value Receiver
@@ -17,8 +21,9 @@ func (e *Employee) leave() bool {
 }
 
 func main() {
-	e := Employee{Name: "somkiat"}
+	e := EmployeeWithEmail{}
 	e.leave()
+	e.Email = "email"
 	println(e.Name)
 
 	var d DayOfMonth = 5 // Day of month
