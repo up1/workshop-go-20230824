@@ -32,3 +32,15 @@ Running 10s test @ http://localhost:8080/hello
 Requests/sec: 127587.41
 Transfer/sec:     17.16MB
 ```
+
+V3
+```
+Running 10s test @ http://localhost:8080/hello
+  5 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.97ms    1.83ms  53.76ms   93.60%
+    Req/Sec    26.42k    18.30k  124.31k    84.80%
+  1319394 requests in 10.07s, 163.58MB read
+Requests/sec: 131017.30
+Transfer/sec:     16.24MB
+```
