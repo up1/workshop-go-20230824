@@ -14,12 +14,7 @@ func main() {
 	fmt.Println("DB Flag=", *dbFlag)
 	// Create DB connection
 	conn := db.CreateConnection()
-	fmt.Println(conn)
-
-	// Normal
-	d := demo.DemoBusiness{}
-	d.Process()
 	// Builder pattern, Creational
-	d2 := demo.NewDemoBusiness()
-	d2.Process()
+	d2 := demo.NewDemoBusiness(conn)
+	d2.Process(1)
 }
