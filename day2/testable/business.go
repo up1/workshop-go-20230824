@@ -12,9 +12,10 @@ type DemoBusiness struct {
 	ur *db.UserRepository
 }
 
-func (d DemoBusiness) Process(id int) {
+func (d DemoBusiness) Process(id int) bool {
 	println("TODO Next")
 	d.ur.GetUserById(id)
+	return true
 }
 
 func NewDemoBusiness(ur *db.UserRepository) *DemoBusiness {
