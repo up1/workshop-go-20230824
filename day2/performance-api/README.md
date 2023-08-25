@@ -1,6 +1,8 @@
 # Performance testing with Go
 * v1 => net/http package
 * V2 => Gin
+* V3 => Echo
+* V4 => Fiber
 
 ## Testing
 ```
@@ -43,4 +45,16 @@ Running 10s test @ http://localhost:8080/hello
   1319394 requests in 10.07s, 163.58MB read
 Requests/sec: 131017.30
 Transfer/sec:     16.24MB
+```
+
+V4
+```
+Running 10s test @ http://localhost:8080/hello
+  5 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.92ms    3.82ms  99.23ms   98.17%
+    Req/Sec    32.39k    11.19k  173.56k    88.38%
+  1614154 requests in 10.04s, 207.82MB read
+Requests/sec: 160766.15
+Transfer/sec:     20.70MB
 ```
