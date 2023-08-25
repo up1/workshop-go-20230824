@@ -18,8 +18,11 @@ func main() {
 	// Global variable
 	demo.Connection = conn
 
+	// Create Repository
+	ur := db.NewUserRepository(conn)
+
 	// Builder pattern, Creational
-	d2 := demo.NewDemoBusiness(conn) // injection
+	d2 := demo.NewDemoBusiness(ur) // injection
 	d2.Process(1)
 
 }

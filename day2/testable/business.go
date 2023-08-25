@@ -9,14 +9,14 @@ import (
 var Connection *pgx.Conn
 
 type DemoBusiness struct {
-	conn *pgx.Conn
+	ur *db.UserRepository
 }
 
 func (d DemoBusiness) Process(id int) {
 	println("TODO Next")
-	db.GetUserById(d.conn, id)
+	d.ur.GetUserById(id)
 }
 
-func NewDemoBusiness(conn *pgx.Conn) *DemoBusiness {
-	return &DemoBusiness{conn: conn}
+func NewDemoBusiness(ur *db.UserRepository) *DemoBusiness {
+	return &DemoBusiness{ur: ur}
 }
