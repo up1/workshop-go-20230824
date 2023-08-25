@@ -23,8 +23,16 @@ type User struct {
 	Email string
 }
 
-func GetUserById(conn *pgx.Conn, id int) (User, error) {
-	err := conn.QueryRow(context.Background(), "select * from users where id=$1").Scan(id)
+type UserRepository struct {
+	conn *pgx.Conn
+}
+
+func NewUserRepository(conn *pgx.Conn) *UserRepository {
+	return &UserRepository{conn: conn}
+}
+
+func (ur *UserRepository) GetUserById(id int) (User, error) {
+	err := ur.conn.QueryRow(context.Background(), "select * from users where id=$1").Scan(id)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
 		os.Exit(1)
