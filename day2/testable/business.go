@@ -6,6 +6,8 @@ import (
 	"github.com/jackc/pgx/v5"
 )
 
+var Connection *pgx.Conn
+
 type DemoBusiness struct {
 	conn *pgx.Conn
 }
