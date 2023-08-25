@@ -14,7 +14,10 @@ type DemoBusiness struct {
 
 func (d DemoBusiness) Process(id int) bool {
 	println("TODO Next")
-	d.ur.GetUserById(id)
+	_, err := d.ur.GetUserById(id)
+	if err != nil {
+		return false
+	}
 	return true
 }
 
