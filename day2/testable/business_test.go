@@ -19,6 +19,15 @@ func (m *mockUserRepository) GetUserById(id int) (db.User, error) {
 }
 
 func TestProcessWithSuccess(t *testing.T) {
+	ur := mockUserRepository{true}
+	d2 := demo.NewDemoBusiness(&ur)
+	r := d2.Process(1)
+	if !r {
+		t.Error("Test fail with success")
+	}
+}
+
+func TestProcessWithError(t *testing.T) {
 	ur := mockUserRepository{false}
 	d2 := demo.NewDemoBusiness(&ur)
 	r := d2.Process(1)
