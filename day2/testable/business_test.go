@@ -6,9 +6,16 @@ import (
 	"testing"
 )
 
+type mockUserRepository struct {
+}
+
+func (m *mockUserRepository) GetUserById(id int) (db.User, error) {
+	return db.User{}, nil
+}
+
 func TestProcessWithSuccess(t *testing.T) {
-	ur := db.NewUserRepository(nil)
-	d2 := demo.NewDemoBusiness(ur)
+	ur := mockUserRepository{}
+	d2 := demo.NewDemoBusiness(&ur)
 	r := d2.Process(1)
 	if !r {
 		t.Error("Test fail with success")

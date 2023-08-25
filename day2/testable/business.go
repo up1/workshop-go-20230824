@@ -9,7 +9,7 @@ import (
 var Connection *pgx.Conn
 
 type DemoBusiness struct {
-	ur *db.UserRepository
+	ur db.MyRepository
 }
 
 func (d DemoBusiness) Process(id int) bool {
@@ -18,6 +18,6 @@ func (d DemoBusiness) Process(id int) bool {
 	return true
 }
 
-func NewDemoBusiness(ur *db.UserRepository) *DemoBusiness {
+func NewDemoBusiness(ur db.MyRepository) *DemoBusiness {
 	return &DemoBusiness{ur: ur}
 }

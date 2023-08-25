@@ -24,6 +24,10 @@ type User struct {
 	Email string
 }
 
+type MyRepository interface {
+	GetUserById(id int) (User, error)
+}
+
 type UserRepository struct {
 	conn *pgx.Conn
 }
